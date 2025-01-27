@@ -179,11 +179,11 @@ DeepSeek's commitment to innovation has transformed the landscape of AI, finance
 
 ## Contributing
 
-We welcome contributions! Please see our [contributing guidelines](./docs/contributing.md) for details.
+We welcome contributions! Please see our [contributing guidelines](CONTRIBUTING.md) for details.
 
 ## Security
 
-Please report any security issues to security@deepchain.io. See our [security policy](./docs/security.md) for details.
+Please report any security issues to security@deepchain.io. See our [security policy](SECURITY.md) for details.
 
 ## Community
 
