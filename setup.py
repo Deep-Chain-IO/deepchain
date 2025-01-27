@@ -15,6 +15,10 @@ setup(
         "numpy>=1.21.0",
         "pandas>=1.3.0",
         "torch>=1.9.0",
+        # DeepSeek related
+        "deepseek-ai>=0.1.0",
+        "deepseek-rl>=0.1.0",
+        "deepseek-distill>=0.1.0",
         # Blockchain related
         "web3>=5.24.0",
         # Edge deployment related
