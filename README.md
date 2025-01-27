@@ -191,4 +191,4 @@ Please report any security issues to security@deepchain.io. See our [security po
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
