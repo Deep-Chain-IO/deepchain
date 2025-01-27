@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <!-- Simplified gradient -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1128"/>
+      <stop offset="100%" style="stop-color:#1B2B4D"/>
+    </linearGradient>
+    <!-- Core element gradient -->
+    <linearGradient id="coreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B7EFF"/>
+      <stop offset="100%" style="stop-color:#26B7FF"/>
+    </linearGradient>
+    <!-- Trading line gradient -->
+    <linearGradient id="tradeLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#26B7FF"/>
+      <stop offset="100%" style="stop-color:#3B7EFF"/>
+    </linearGradient>
+    <!-- Minimized glow effect -->
+    <filter id="minimalGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <circle cx="100" cy="100" r="90" fill="url(#primaryGradient)"/>
+  <!-- Core structure -->
+  <g transform="translate(100,100)">
+    <!-- Main hexagon -->
+    <path d="M-40,-23 L0,-46 L40,-23 L40,23 L0,46 L-40,23 Z"
+          fill="none"
+          stroke="url(#coreGradient)"
+          stroke-width="2"
+          filter="url(#minimalGlow)"/>
+    <!-- Simplified internal structure -->
+    <path d="M0,-46 L0,46 M-40,0 L40,0"
+          stroke="url(#coreGradient)"
+          stroke-width="1.5"
+          opacity="0.6"/>
+    <!-- Core node -->
+    <circle cx="0" cy="0" r="4" fill="#26B7FF" filter="url(#minimalGlow)"/>
+  </g>
+  <!-- Streamlined trading curves -->
+  <g transform="translate(100,100)" opacity="0.8">
+    <path d="M-30,-10 Q-15,20 0,-15 T30,10"
+          fill="none"
+          stroke="url(#tradeLine)"
+          stroke-width="2"
+          filter="url(#minimalGlow)"/>
+  </g>
+  <!-- Minimized decorative elements -->
+  <g transform="translate(100,100)">
+    <circle r="60"
+            fill="none"
+            stroke="#26B7FF"
+            stroke-width="0.5"
+            opacity="0.2"/>
+    <circle r="70"
+            fill="none"
+            stroke="#26B7FF"
+            stroke-width="0.5"
+            opacity="0.1"/>
+  </g>
+</svg> 

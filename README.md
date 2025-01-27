@@ -1,5 +1,9 @@
 # DeepChain
 
+<div align="center">
+  <img src="assets/logo.svg" alt="DeepChain Logo" width="200" height="200">
+</div>
+
 Deep Seek AI-Driven Strategies, Blockchain-Verified Trust
 
 ## Overview
