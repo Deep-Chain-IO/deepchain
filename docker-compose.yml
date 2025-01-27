@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  # Main application service
+  app:
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - BLOCKCHAIN_NODE_URL=${BLOCKCHAIN_NODE_URL}
+    depends_on:
+      - redis
+      - postgres
+    networks:
+      - deepchain-network
+
+  # Redis for caching and message queue
+  redis:
+    image: redis:6-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - deepchain-network
+
+  # PostgreSQL for data storage
+  postgres:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_USER=${DB_USER:-deepchain}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-deepchain}
+      - POSTGRES_DB=${DB_NAME:-deepchain}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - deepchain-network
+
+  # Monitoring service
+  prometheus:
+    image: prom/prometheus:v2.30.3
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - deepchain-network
+
+  # Visualization dashboard
+  grafana:
+    image: grafana/grafana:8.2.2
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    networks:
+      - deepchain-network
+
+volumes:
+  redis-data:
+  postgres-data:
+  prometheus-data:
+  grafana-data:
+
+networks:
+  deepchain-network:
+    driver: bridge 
