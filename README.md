@@ -187,10 +187,7 @@ Please report any security issues to security@deepchain.io. See our [security po
 
 ## Community
 
-- [Discord](https://discord.gg/deepchain)
-- [Twitter](https://twitter.com/deepchain)
-- [Blog](https://blog.deepchain.io)
-- [Forum](https://forum.deepchain.io)
+- [Twitter](https://x.com/DeepChain_AI)
 
 ## License
 
